@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SwiftRingGraph" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="WxF-6D-4Nv">
+                                <rect key="frame" x="-2" y="494" width="604" height="31"/>
+                                <color key="backgroundColor" red="0.85401952270000003" green="0.28440129759999999" blue="0.31356590989999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="thumbTintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="sliderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="S4x-gt-mHR"/>
+                                </connections>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="K15-5h-Dfp">
+                                <rect key="frame" x="-2" y="532" width="604" height="31"/>
+                                <color key="backgroundColor" red="0.95686274510000002" green="0.4549019608" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="thumbTintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="normalSliderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="IxQ-2W-QpY"/>
+                                </connections>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="6W6-CT-4PJ">
+                                <rect key="frame" x="-2" y="570" width="604" height="31"/>
+                                <color key="backgroundColor" red="1" green="0.42964646613200519" blue="0.48250065829038402" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="thumbTintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="smallSliderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="6By-fH-36U"/>
+                                </connections>
+                            </slider>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A9W-T3-tAa" customClass="CircleGraphView" customModule="SwiftRingGraph" customModuleProvider="target">
+                                <rect key="frame" x="75" y="75" width="450" height="450"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oLN-3C-w6Z" customClass="CircleGraphView" customModule="SwiftRingGraph" customModuleProvider="target">
+                                        <rect key="frame" x="75" y="75" width="300" height="300"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6IJ-Ej-1RE" customClass="CircleGraphView" customModule="SwiftRingGraph" customModuleProvider="target">
+                                                <rect key="frame" x="50" y="50" width="200" height="200"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="6IJ-Ej-1RE" firstAttribute="centerY" secondItem="oLN-3C-w6Z" secondAttribute="centerY" id="6gf-Of-icm"/>
+                                            <constraint firstItem="6IJ-Ej-1RE" firstAttribute="height" secondItem="oLN-3C-w6Z" secondAttribute="height" multiplier="2:3" id="moL-pu-lMJ"/>
+                                            <constraint firstItem="6IJ-Ej-1RE" firstAttribute="centerX" secondItem="oLN-3C-w6Z" secondAttribute="centerX" id="nb9-Ki-wBT"/>
+                                            <constraint firstItem="6IJ-Ej-1RE" firstAttribute="width" secondItem="oLN-3C-w6Z" secondAttribute="width" multiplier="2:3" id="tMU-9r-1Nt"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="oLN-3C-w6Z" firstAttribute="centerX" secondItem="A9W-T3-tAa" secondAttribute="centerX" id="1l7-Gk-tTU"/>
+                                    <constraint firstItem="oLN-3C-w6Z" firstAttribute="height" secondItem="A9W-T3-tAa" secondAttribute="height" multiplier="2:3" id="AOV-9w-JWX"/>
+                                    <constraint firstItem="oLN-3C-w6Z" firstAttribute="centerY" secondItem="A9W-T3-tAa" secondAttribute="centerY" id="IeN-Zk-rZ6"/>
+                                    <constraint firstItem="oLN-3C-w6Z" firstAttribute="width" secondItem="A9W-T3-tAa" secondAttribute="width" multiplier="2:3" id="kPn-Oy-yc8"/>
+                                    <constraint firstAttribute="width" secondItem="A9W-T3-tAa" secondAttribute="height" multiplier="1:1" id="sOZ-DZ-Afs"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="gmh-fu-uJ6">
+                                <rect key="frame" x="187" y="20" width="65" height="123"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="50%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cII-e5-lR4">
+                                        <rect key="frame" x="0.0" y="0.0" width="65" height="41"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="30"/>
+                                        <color key="textColor" red="0.85401952270000003" green="0.28440129759999999" blue="0.31356590989999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="50%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Qm-JA-0Ed">
+                                        <rect key="frame" x="0.0" y="41" width="65" height="41"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="30"/>
+                                        <color key="textColor" red="0.95686274510000002" green="0.4549019608" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="50%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EYc-W7-Jgv">
+                                        <rect key="frame" x="0.0" y="82" width="65" height="41"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="30"/>
+                                        <color key="textColor" red="1" green="0.42964646610000001" blue="0.4825006583" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="K15-5h-Dfp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9fa-ky-in6"/>
+                            <constraint firstItem="K15-5h-Dfp" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="AND-do-9Xc"/>
+                            <constraint firstItem="6W6-CT-4PJ" firstAttribute="top" secondItem="K15-5h-Dfp" secondAttribute="bottom" constant="8" id="CLv-Pj-UxH"/>
+                            <constraint firstItem="6W6-CT-4PJ" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="FHU-I0-U0m"/>
+                            <constraint firstItem="A9W-T3-tAa" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.75" id="FP7-oO-ou3"/>
+                            <constraint firstItem="gmh-fu-uJ6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Jmc-v4-eUq"/>
+                            <constraint firstItem="6W6-CT-4PJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ncw-zc-xFI"/>
+                            <constraint firstItem="gmh-fu-uJ6" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Sw0-kd-9wU"/>
+                            <constraint firstItem="WxF-6D-4Nv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VpL-Jo-1Vj"/>
+                            <constraint firstItem="A9W-T3-tAa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YfV-VQ-9eV"/>
+                            <constraint firstItem="A9W-T3-tAa" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="aKq-st-XoV"/>
+                            <constraint firstItem="K15-5h-Dfp" firstAttribute="top" secondItem="WxF-6D-4Nv" secondAttribute="bottom" constant="8" id="al5-de-VdS"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="6W6-CT-4PJ" secondAttribute="bottom" id="odc-YG-hC9"/>
+                            <constraint firstItem="WxF-6D-4Nv" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="vKy-yB-kI0"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bigCircleGraph" destination="A9W-T3-tAa" id="1LC-vu-8kn"/>
+                        <outlet property="bigPercentLabel" destination="cII-e5-lR4" id="fU4-1h-EZo"/>
+                        <outlet property="normalCircleGraph" destination="oLN-3C-w6Z" id="bB5-xs-9zk"/>
+                        <outlet property="normalPercentLabel" destination="4Qm-JA-0Ed" id="N01-Ej-i3q"/>
+                        <outlet property="smallCircleGraph" destination="6IJ-Ej-1RE" id="K6G-ZF-waa"/>
+                        <outlet property="smallPercentLabel" destination="EYc-W7-Jgv" id="Ljj-9X-b6E"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="299" y="389"/>
+        </scene>
+    </scenes>
+</document>
